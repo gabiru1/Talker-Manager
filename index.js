@@ -18,6 +18,8 @@ app.get('/talker/:id', getTalkersById);
 
 app.post('/login', validateEmail, validatePassword, sendLoginToken);
 
+app.post('/talker');
+
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
