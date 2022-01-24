@@ -2,7 +2,7 @@ const emptyTokenMessage = { message: 'Token não encontrado' };
 const invalidTokenmessage = { message: 'Token inválido' };
 
 const validateToken = (req, res, next) => {
-  const { token } = req.header.authorization;
+  const token = req.headers.authorization;
 
   if (!token) return res.status(401).json(emptyTokenMessage);
 
