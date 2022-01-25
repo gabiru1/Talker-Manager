@@ -36,6 +36,8 @@ app.post(
   sendNewTalker,
   );
 
+  app.put('/talker/:id');
+
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
