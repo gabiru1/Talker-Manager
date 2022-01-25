@@ -1,10 +1,10 @@
-const { writeFile, readFile } = require('fs');
+const { writeFile, readFile } = require('fs').promises;
 
 async function editTalker(req, res) {
   const { id } = req.params;
   const { name, age, talk } = req.body;
 
-  const talkers = await JSON.parse(readFile('talker.json', 'utf-8'));
+  const talkers = await readFile('talker.json', 'utf-8').then((talker) => JSON.parse(talker));
 
   /* const position  = talkers.indexOf() */ // tentando implementar
 
